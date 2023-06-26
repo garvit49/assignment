@@ -1,0 +1,90 @@
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 300px; /* Adjust the width as per your preference */
+  }
+  
+  .search-bar button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .search-bar p {
+    margin-top: 10px;
+    font-style: italic;
+    color: #f00;
+  }
+  
+  .search-bar .slider-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  
+  .search-bar .slider-container .slider-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .search-bar .slider-container .slider-wrapper .image-style {
+    width: calc(33.33% - 10px); /* Adjust the width as per your preference */
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 10px; /* Add spacing between images */
+    margin-bottom: 10px; /* Add spacing below images */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    border-radius: 5px; /* Add rounded corners */
+    transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+  }
+  
+  .search-bar .slider-container .slider-wrapper .image-style:last-child {
+    margin-right: 0; /* Remove margin from the last image in each line */
+  }
+  
+  .search-bar .slider-container .slider-wrapper .image-style:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Enhance shadow effect on hover */
+  }
+  
+  @media (max-width: 1024px) {
+    .search-bar .slider-container .slider-wrapper .image-style {
+      width: calc(50% - 10px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .search-bar .slider-container .slider-wrapper .image-style {
+      width: calc(50% - 10px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-bar .slider-container .slider-wrapper .image-style {
+      width: 100%;
+      margin-right: 0; /* Remove margin for single image on a line */
+    }
+  }
+  
