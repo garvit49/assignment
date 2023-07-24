@@ -46,8 +46,9 @@ jobs:
         id: commit_changes
         if: steps.check_contributor.outputs.exists == 'false'
         run: |
-            git config  --local user.email "action@github.com"
-            git config  --local user.name "GitHub Action"
+            git config --global credential.helper store
+            git config --global user.email "action@github.com"
+            git config --global user.name "GitHub Action
             git add AUTHORS.md
             git commit -m "Add $GITHUB_ACTOR to AUTHORS.md"
 
@@ -63,4 +64,4 @@ jobs:
         if: steps.check_contributor.outputs.exists == 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push origin HEAD
+        run: git push origin HEAD:${{ github.head_ref }}
