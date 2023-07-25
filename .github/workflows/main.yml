@@ -51,6 +51,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr checkout ${{ github.event.pull_request.number }}
 
+      - name: Grant bot write permissions
+        if: steps.check_contributor.outputs.exists == 'false'
+        run: |
+          echo "Adding write permissions to bot"
+          gh repo collaborators add ${{ secrets.BOT_USERNAME }} ${{ github.repository }} write
+
 
       - name: Commit changes
         id: commit_changes
